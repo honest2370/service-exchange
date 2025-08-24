@@ -1,1 +1,1 @@
-flask\nflask_sqlalchemy\ngunicorn
+flask\nflask_sqlalchemy\nflask_login\ngunicorn
