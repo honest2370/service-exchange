@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+<p class="mb-3">All registered users:</p>
+<table class="table table-striped bg-white rounded">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Balance</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for u in users %}
+    <tr>
+      <td>{{ u.id }}</td>
+      <td>{{ u.username }}</td>
+      <td>${{ "%.2f"|format(u.balance) }}</td>
+      <td>{{ u.rating }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

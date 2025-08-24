@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Welcome{% endblock %}
+{% block content %}
+<div class="text-center">
+  <h1 class="mb-4">Welcome to Service Exchange</h1>
+  <p class="lead mb-4">
+    Connect with people, exchange services for money, and grow your opportunities.  
+    Chat, trade, and build your reputation with ratings!
+  </p>
+  
+  <div class="d-flex justify-content-center gap-3">
+    <a href="/register" class="btn btn-success btn-lg px-5">Create Account</a>
+    <a href="/login" class="btn btn-primary btn-lg px-5">Login</a>
+  </div>
+
+  <div class="mt-5">
+    <h3>Why join us?</h3>
+    <ul class="list-group list-group-flush col-md-6 mx-auto text-start">
+      <li class="list-group-item">✔ Exchange your skills for money</li>
+      <li class="list-group-item">✔ Rate and build trust with others</li>
+      <li class="list-group-item">✔ Chat and connect in real-time</li>
+      <li class="list-group-item">✔ Easy to use, works everywhere</li>
+    </ul>
+  </div>
+</div>
+{% endblock %}

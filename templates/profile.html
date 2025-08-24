@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ user.username }}'s Profile{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <div class="card p-3 shadow-sm">
+    <h2>{{ user.full_name or user.username }}</h2>
+    <p><strong>Bio:</strong> {{ user.bio or "No bio yet" }}</p>
+    <p><strong>Location:</strong> {{ user.location or "Not set" }}</p>
+    <p><strong>Website:</strong> <a href="{{ user.website or '#' }}">{{ user.website or "Not added" }}</a></p>
+    <hr>
+    <p>💰 Balance: {{ user.balance }}</p>
+    <p>⭐ Rating: {{ user.rating }}</p>
+  </div>
+</div>
+{% endblock %}

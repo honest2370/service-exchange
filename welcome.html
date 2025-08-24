@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<div class="container mt-5 text-center">
+  <h1 class="mb-4">👋 Welcome to Service Exchange</h1>
+  <p class="lead mb-5">
+    Connect with people, exchange services, and grow your network.  
+    Fast, simple, and secure — just like Facebook but for skills & services!
+  </p>
+
+  <!-- Action Buttons -->
+  <div class="d-grid gap-3 col-6 mx-auto">
+    <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg">Login</a>
+    <a href="{{ url_for('register') }}" class="btn btn-success btn-lg">Register</a>
+  </div>
+
+  <!-- Advantages Section -->
+  <div class="mt-5">
+    <h3>🌟 Why Join?</h3>
+    <ul class="list-unstyled">
+      <li>✅ Post your services & offers</li>
+      <li>✅ Chat & connect with other users</li>
+      <li>✅ Earn ratings & build your profile</li>
+      <li>✅ 100% free to use</li>
+    </ul>
+  </div>
+</div>
+{% endblock %}

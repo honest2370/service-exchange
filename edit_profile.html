@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}My Profile{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="text-center mb-4">👤 My Profile</h2>
+
+  <!-- Profile Card -->
+  <div class="card shadow-lg p-4 rounded-3">
+    <form method="POST" action="{{ url_for('profile') }}">
+      
+      <!-- Full Name -->
+      <div class="mb-3">
+        <label class="form-label">Full Name</label>
+        <input type="text" name="full_name" class="form-control" value="{{ current_user.full_name or '' }}">
+      </div>
+
+      <!-- Username -->
+      <div class="mb-3">
+        <label class="form-label">Username / Email</label>
+        <input type="text" class="form-control" value="{{ current_user.username }}" disabled>
+      </div>
+
+      <!-- Bio -->
+      <div class="mb-3">
+        <label class="form-label">Bio</label>
+        <textarea name="bio" class="form-control" rows="3">{{ current_user.bio or '' }}</textarea>
+      </div>
+
+      <!-- Location -->
+      <div class="mb-3">
+        <label class="form-label">Location</label>
+        <input type="text" name="location" class="form-control" value="{{ current_user.location or '' }}">
+      </div>
+
+      <!-- Website -->
+      <div class="mb-3">
+        <label class="form-label">Website</label>
+        <input type="url" name="website" class="form-control" value="{{ current_user.website or '' }}">
+      </div>
+
+      <!-- Save Button -->
+      <div class="d-grid">
+        <button type="submit" class="btn btn-success btn-lg">💾 Save Changes</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Profile Stats -->
+  <div class="mt-5 text-center">
+    <h4>📊 My Stats</h4>
+    <p><strong>Rating:</strong> ⭐ {{ current_user.rating or 0 }}</p>
+    <p><strong>Balance:</strong> 💰 {{ current_user.balance or 0 }}</p>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <h2>👋 Welcome back, {{ user.username }}!</h2>
+
+  <div class="row mt-4">
+    <!-- Left side -->
+    <div class="col-md-4">
+      <div class="card p-3 shadow-sm">
+        <h4>📌 Profile</h4>
+        <p><strong>Full Name:</strong> {{ user.full_name or "Not set" }}</p>
+        <p><strong>Bio:</strong> {{ user.bio or "No bio yet" }}</p>
+        <p><strong>Location:</strong> {{ user.location or "Not set" }}</p>
+        <p><strong>Website:</strong> <a href="{{ user.website or '#' }}">{{ user.website or "Not added" }}</a></p>
+        <a href="/edit_profile" class="btn btn-sm btn-primary">✏️ Edit Profile</a>
+        <a href="/profile/{{ user.username }}" class="btn btn-sm btn-secondary">👀 View Public Profile</a>
+      </div>
+    </div>
+
+    <!-- Middle feed -->
+    <div class="col-md-8">
+      <div class="card p-3 shadow-sm mb-3">
+        <h4>🌟 Your Stats</h4>
+        <p>💰 Balance: {{ user.balance }}</p>
+        <p>⭐ Rating: {{ user.rating }}</p>
+      </div>
+
+      <div class="card p-3 shadow-sm mb-3">
+        <h4>📨 Invite Friends</h4>
+        <p>Share this link to invite others:</p>
+        <code>http://127.0.0.1:5000/register?invite={{ user.username }}</code>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
